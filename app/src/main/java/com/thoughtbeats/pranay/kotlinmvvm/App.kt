@@ -19,7 +19,6 @@ class App : MultiDexApplication(),HasServiceInjector,HasActivityInjector {
 
     override fun onCreate() {
         super.onCreate()
-        //App injector initialization here
         AppInjector().initialze(this)
     }
 

@@ -16,46 +16,39 @@ import dagger.android.support.HasSupportFragmentInjector
 class AppInjector {
 
     fun initialze(application: App){
-        //DaggerApplicationComponent here
-
         DaggerApplicationComponent
                 .builder()
                 .application(application)
                 .build()
                 .inject(application)
 
-
-
-
     application.registerActivityLifecycleCallbacks(object :Application.ActivityLifecycleCallbacks{
-        override fun onActivityPaused(p0: Activity?) {
-            //Empty method
-        }
-
-        override fun onActivityResumed(p0: Activity?) {
-            //Empty method
-        }
-
-        override fun onActivityStarted(p0: Activity?) {
-            //Empty method
-        }
-
-        override fun onActivityDestroyed(p0: Activity?) {
-            //Empty method
-        }
-
-        override fun onActivitySaveInstanceState(p0: Activity?, p1: Bundle?) {
-            //Empty method
-        }
-
-        override fun onActivityStopped(p0: Activity?) {
-            //Empty method
-        }
-
-        override fun onActivityCreated(activity: Activity?, p1: Bundle?) {
+        override fun onActivityCreated(activity: Activity?, bundle: Bundle) {
             injectActivity(activity)
         }
+        override fun onActivityPaused(activity: Activity?) {
+            //Empty method
+        }
 
+        override fun onActivityResumed(activity: Activity?) {
+            //Empty method
+        }
+
+        override fun onActivityStarted(activity: Activity?) {
+            //Empty method
+        }
+
+        override fun onActivityDestroyed(activity: Activity?) {
+            //Empty method
+        }
+
+        override fun onActivitySaveInstanceState(activity: Activity?, bundle: Bundle) {
+            //Empty method
+        }
+
+        override fun onActivityStopped(activity: Activity?) {
+            //Empty method
+        }
     })
     }
     fun injectActivity(activity: Activity?){
