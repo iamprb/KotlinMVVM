@@ -23,7 +23,7 @@ class AppInjector {
                 .inject(application)
 
     application.registerActivityLifecycleCallbacks(object :Application.ActivityLifecycleCallbacks{
-        override fun onActivityCreated(activity: Activity?, bundle: Bundle) {
+        override fun onActivityCreated(activity: Activity?, bundle: Bundle?) {
             injectActivity(activity)
         }
         override fun onActivityPaused(activity: Activity?) {
